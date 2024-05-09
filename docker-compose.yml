@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  database:
+    image: 'mongo:7.0'
+    container_name: TestAppMongoDB
+    ports:
+      - 27017:27017
