@@ -21,14 +21,15 @@ public class UserService {
     private final UserRepository userRepository;
     private final UserMapper usersMapper;
 
-    public User create(UserCreateDto userCreateDto) {
-        return userRepository.save(usersMapper.toUser(userCreateDto));
+    public UserPreviewDto create(UserCreateDto userCreateDto) {
+        User user = userRepository.save(usersMapper.toUser(userCreateDto));
+        return usersMapper.toPreviewDto(user);
     }
 
     public User update(String id, UserUpdateDto updateDto) {
         User user = findById(id);
         usersMapper.userUpdateDtoToUser(updateDto, user);
-        return userRepository.save(user);
+        return user;
     }
 
     public void updateEmail(String id, EmailUpdateRequest email) {
@@ -42,8 +43,8 @@ public class UserService {
         userRepository.delete(user);
     }
 
-    public List<User> findAll() {
-        return userRepository.findAll();
+    public List<UserPreviewDto> findAll() {
+        return usersMapper.toPreviewDtos(userRepository.findAll());
     }
 
     public User findById(String id) {

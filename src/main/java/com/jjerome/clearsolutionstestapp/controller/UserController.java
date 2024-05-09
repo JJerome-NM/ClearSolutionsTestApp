@@ -38,7 +38,7 @@ public class UserController {
     }
 
     @GetMapping
-    public List<User> getUsers() {
+    public List<UserPreviewDto> getUsers() {
         return userService.findAll();
     }
 
@@ -48,7 +48,7 @@ public class UserController {
     }
 
     @PostMapping
-    public User create(@Valid @RequestBody UserCreateDto user) {
+    public UserPreviewDto create(@Valid @RequestBody UserCreateDto user) {
         return userService.create(user);
     }
 
