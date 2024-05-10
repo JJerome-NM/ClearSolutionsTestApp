@@ -120,7 +120,7 @@ public class UserServiceTests {
     @Test
     void createUserValidation_Test(){
         UserCreateDto createDto = new UserCreateDto();
-        createDto.setEmail("test@gmail.com");
+        createDto.setEmail("");
         createDto.setName("test1");
         createDto.setLastname("lastnametest");
         createDto.setBirthday(new Date(102, Calendar.FEBRUARY, 1));
@@ -137,7 +137,7 @@ public class UserServiceTests {
     @Test
     void createUser_Test() {
         UserCreateDto createDto = new UserCreateDto();
-        createDto.setEmail("");
+        createDto.setEmail("test@gmail.com");
         createDto.setName("test1");
         createDto.setLastname("lastnametest");
         createDto.setBirthday(new Date(105, Calendar.FEBRUARY, 1));
