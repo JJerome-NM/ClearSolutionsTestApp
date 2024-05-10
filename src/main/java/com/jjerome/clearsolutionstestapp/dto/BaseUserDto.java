@@ -22,4 +22,3 @@ public class BaseUserDto {
     @NotNull
     private Date birthday;
 }
-

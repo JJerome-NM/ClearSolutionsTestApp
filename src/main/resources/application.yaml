@@ -6,4 +6,4 @@ spring:
 
 user:
   validation:
-    migAge: 18
+    minAge: 18

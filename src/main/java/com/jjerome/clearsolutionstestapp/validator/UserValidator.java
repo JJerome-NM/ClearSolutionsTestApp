@@ -15,7 +15,7 @@ import java.util.Date;
 
 @Component
 public class UserValidator implements Validator {
-    @Value("${user.validation.migAge:18}")
+    @Value("${user.validation.minAge:18}")
     private int minAge;
 
     @Override
