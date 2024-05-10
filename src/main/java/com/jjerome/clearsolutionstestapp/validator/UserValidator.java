@@ -40,7 +40,8 @@ public class UserValidator implements Validator {
         Period period = Period.between(birthDate, currentDate);
 
         if (period.getYears() < minAge){
-            errors.rejectValue("birthday", "user.validation.birthday", "Yourr minimal age is too low");
+//            throw new UserIsOverAgeLimitException();
+            errors.rejectValue("birthday", "user.validation.birthday", "Your minimal age is too low");
         }
     }
 }

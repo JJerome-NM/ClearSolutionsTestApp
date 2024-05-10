@@ -2,6 +2,7 @@ package com.jjerome.clearsolutionstestapp.domain;
 
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -14,6 +15,7 @@ import java.util.Date;
 @Document
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @Getter @Setter
 public class User {
     @Id

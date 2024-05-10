@@ -10,6 +10,7 @@ import com.jjerome.clearsolutionstestapp.service.UserService;
 import com.jjerome.clearsolutionstestapp.validator.UserValidator;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,7 +33,7 @@ public class UserController {
     private final UserService userService;
     private final UserValidator userValidator;
 
-    @InitBinder("userbase")
+    @InitBinder({"userCreateDto", "userUpdateDto"})
     protected void initBinder(WebDataBinder binder) {
         binder.addValidators(userValidator);
     }
